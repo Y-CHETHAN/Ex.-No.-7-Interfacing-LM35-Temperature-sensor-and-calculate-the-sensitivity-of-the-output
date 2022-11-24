@@ -283,24 +283,56 @@ ADxDRy. E.g. AD0DR1 contains ADC result of channel 1 of ADC0.
 Figure -08 Circuit diagram of interfacing an LM35  with ADC input pin
 
 ## Kiel - Program:
- 
+```c
+#include <lpc214x.h>
+#include "LCD.h"
+#include "ADC.h"
+unsigned int val;
+/*void delay_ms(unsigned int count)
+{
+   unsigned int i=0,j=0;
+   for(j=0;j<count;j++)
+   {
+   	for(i=0;i<count;i++);
+   }
+}*/
+int main()
+{
+   IO1DIR = 0xffffffff;
+   IO0DIR = 0x00000000;
+   PINSEL0 = 0x0300;
+   VPBDIV = 0x02;
+   lcd_init();
+   show(" ADC Value:");
+   while(1)
+   {
+   	cmd(0x8b);
+   	//delay_ms(1000);
+   	val=adc(0,6);
+   	dat((val/1000)+48);
+   	dat(((val/100)%10)+48);
+   	dat(((val/10)%10)+48);
+   	dat((val%10)+48);
+   }
+}
+```
 ## Tabulations and graph:
 **Calculation of sensitivity**
 <br/>
 % of sensitivity is S = (T2-T1)/(A2-A1) * 100
 
-SL NO	Temperature value in °C (T)	ADC VALUE (A)	Sensitivity 
-1			-
-2			
-3			
-4			
-5			
-6			
-7			
-8			
-9			
-10			
-
+| S. NO.  | TEMPERATURE VALUE IN °C (T) | ADC VALUE (A) | SENSITIVITY |
+| ------- | --------------------------- | ------------- | ----------- |
+|    1    | 10                          | 31            | 32.25       |
+|    2    | 20                          | 62            | 31.25       |
+|    3    | 30                          | 94            | 32.25       |
+|    4    | 40                          | 125           | 32.25       |
+|    5    | 50                          | 156           | 32.25       |
+|    6    | 60                          | 187           | 32.25       |
+|    7    | 70                          | 218           | 32.25       |
+|    8    | 80                          | 249           | 32.25       |
+|    9    | 90                          | 280           | 32.25       |
+|   10    | 100                         | 311           | 32.25       |
 
 ![pm123](https://user-images.githubusercontent.com/94222288/200372036-17a30d89-9501-450e-91c3-ad99476e9ccd.png) 
 
