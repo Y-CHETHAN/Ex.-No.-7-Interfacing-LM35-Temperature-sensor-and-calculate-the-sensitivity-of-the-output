@@ -285,11 +285,8 @@ Figure -08 Circuit diagram of interfacing an LM35  with ADC input pin
 ## Kiel - Program:
  
 ## Tabulations and graph:
-Calculation of sensitivity 
-% of sensitivity is   S=  (T2-T1)/(A2-A1)*100
-
-
-
+**Calculation of sensitivity**
+% of sensitivity is S = (T2-T1)/(A2-A1) * 100
 
 SL NO	Temperature value in °C (T)	ADC VALUE (A)	Sensitivity 
 1			-
@@ -305,6 +302,7 @@ SL NO	Temperature value in °C (T)	ADC VALUE (A)	Sensitivity
 
 
 ![pm123](https://user-images.githubusercontent.com/94222288/200372036-17a30d89-9501-450e-91c3-ad99476e9ccd.png) 
+
 Figure -09 graph between temperature values and ADC output 
 
 ## Output:
