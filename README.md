@@ -254,6 +254,7 @@ This bit is set to 1 when an A/D conversion completes. It is cleared when this r
 * The sensitivity of LM35 is 10 mV/degree Celsius. As temperature increases, output voltage also increases. E.g. 250 mV means 25°C.
 * It is a 3-terminal sensor used to measure surrounding temperature ranging from -55 °C to 150 °C.
 * LM35 gives temperature output which is more precise than thermistor output.
+
 ![image](https://user-images.githubusercontent.com/36288975/200110411-f6488eeb-39e9-4876-b5c5-c1ebba612137.png)
 
 **Features of LM35**
